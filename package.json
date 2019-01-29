@@ -1,0 +1,56 @@
+{
+  "name": "blockchain-development",
+  "description": "",
+  "version": "0.1.0",
+  "author": "Lior Frenkel <frenkeldev@gmail.com>",
+  "dependencies": {
+    "@emotion/core": "^10.0.6",
+    "@emotion/styled": "^10.0.6",
+    "emotion-normalize": "^10.0.0",
+    "emotion-theming": "^10.0.6",
+    "facepaint": "^1.2.1",
+    "gatsby": "^2.0.91",
+    "gatsby-image": "^2.0.26",
+    "gatsby-plugin-emotion": "^4.0.1",
+    "gatsby-plugin-manifest": "^2.0.13",
+    "gatsby-plugin-offline": "^2.0.21",
+    "gatsby-plugin-react-helmet": "^3.0.5",
+    "gatsby-plugin-sharp": "^2.0.17",
+    "gatsby-source-filesystem": "^2.0.16",
+    "gatsby-transformer-sharp": "^2.1.10",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.0",
+    "styled-theming": "^2.2.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^5.0.0-alpha.10",
+    "@storybook/addon-links": "^5.0.0-alpha.10",
+    "@storybook/addons": "^5.0.0-alpha.10",
+    "@storybook/react": "^5.0.0-alpha.10",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.12.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
