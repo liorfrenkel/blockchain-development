@@ -86,6 +86,9 @@ const menuInnerStyles = {
   bmOverlay: {
     background: 'rgba(0, 0, 0, 0.1)',
   },
+  bmItemList: {
+    height: 'auto',
+  },
 };
 const lineThickness = '4px';
 const transitionSpeed = '.1s';
