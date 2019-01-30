@@ -47,6 +47,7 @@
     "@storybook/addons": "^5.0.0-alpha.10",
     "@storybook/react": "^5.0.0-alpha.10",
     "babel-loader": "^8.0.5",
+    "babel-preset-gatsby": "^0.1.6",
     "babel-tape-runner": "^3.0.0",
     "eslint": "^5.12.1",
     "eslint-plugin-import": "^2.14.0",
