@@ -27,7 +27,7 @@ const responsiveContainer = themeUtils.mq({
 const IndexPage = ({ data }) => (
   <React.Fragment>
     <BgLogos />
-    <Layout>
+    <Layout topPadding={false}>
       <Seo title="Home" />
       <Centered
         fullHeight

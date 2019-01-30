@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Global, css, jsx } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import emotionNormalize from 'emotion-normalize';
+import themeUtils from '../../lib/themeUtils';
 import { Container } from '../blocks';
 import styles from '../../styles';
 import './Layout.css';
@@ -48,7 +49,10 @@ const Layout = ({ children }) => (
         `}
       />
       <Header />
-      <div css={h100}>
+      <div css={theme => css`
+        ${h100}
+        padding-top: ${themeUtils.getTheme({theme}).spacings.vertical[4]};
+      `}>
         <Container css={h100}>{children}</Container>
       </div>
     </div>
@@ -57,7 +61,6 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  containerStyles: PropTypes.any,
 };
 
 export default Layout;
