@@ -16,7 +16,7 @@ import {
   Separator,
   Link,
 } from '../components/blocks';
-import themeUtils from '../themes/themeUtils';
+import themeUtils from '../lib/themeUtils';
 
 const headerHeights = ['80px', '102px']; // defined by the logo height and padding in header
 const responsiveContainer = themeUtils.mq({

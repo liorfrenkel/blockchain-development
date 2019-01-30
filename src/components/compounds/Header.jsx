@@ -2,23 +2,38 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { Global, css } from '@emotion/core';
 import { Logo } from './';
-import { Container } from '../blocks';
-import themeUtils from '../../themes/themeUtils';
+import { Container, SideSlideMenu as Menu } from '../blocks';
+import themeUtils from '../../lib/themeUtils';
 
+const menuBtn = {
+  width: 30,
+  height: 26,
+};
+const paddingsTop = ['15px', '21px'];
+const headerHeights = ['80', '102'];
 const responsiveBodyPadding = themeUtils.mq({
-  paddingTop: ['80px', '102px'],
+  paddingTop: themeUtils.sizeToPx(headerHeights),
+});
+const responsiveMenuTop = themeUtils.mq({
+  top: themeUtils.sizeToPx(headerHeights.map(x => x / 2 - menuBtn.height / 2)),
 });
 
 const Header = () => (
   <div
-    css={{
-      background: '#ffffff',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      zIndex: 10,
-    }}
+    css={css`
+      background: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+
+      .SideSlideMenu .menu-toggle {
+        width: ${menuBtn.width}px;
+        height: ${menuBtn.height}px;
+        ${responsiveMenuTop}
+      }
+    `}
   >
     <Global
       styles={css`
@@ -28,10 +43,13 @@ const Header = () => (
       `}
     />
     <Container
-      css={themeUtils.mq({
-        paddingTop: ['15px', '21px'],
-        paddingBottom: ['15px', '21px'],
-      })}
+      css={css`
+        ${themeUtils.mq({
+          paddingTop: paddingsTop,
+          paddingBottom: paddingsTop,
+        })}
+        display: flex;
+      `}
     >
       <Link
         to="/"
@@ -49,6 +67,10 @@ const Header = () => (
         />
       </Link>
     </Container>
+    <Menu right>
+      <Link to="/" activeClassName="is-active">HOME</Link>
+      <Link to="/team" activeClassName="is-active">TEAM</Link>
+    </Menu>
   </div>
 );
 

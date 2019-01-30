@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { StaticQuery, graphql } from 'gatsby';
 import { Quote } from '../blocks';
-import themeUtils from '../../themes/themeUtils';
+import themeUtils from '../../lib/themeUtils';
 
 const responsiveMaxWidth = themeUtils.mq({
   maxWidth: ['90%', '400px'],

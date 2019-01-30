@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
-import themeUtils from '../../themes/themeUtils';
+import themeUtils from '../../lib/themeUtils';
 
-const paddingHorizontal = ['15px', null, null, '40px', '70px'];
-const responsiveHorizontal = themeUtils.mq({
-  paddingLeft: paddingHorizontal,
-  paddingRight: paddingHorizontal,
+const paddingHorizontal = props => themeUtils.getTheme(props).padding.container;
+const responsiveHorizontal = props => themeUtils.mq({
+  paddingLeft: paddingHorizontal(props),
+  paddingRight: paddingHorizontal(props),
 });
 const Container = styled.div`
-  ${responsiveHorizontal}
+  ${p => responsiveHorizontal(p)}
   width: 100%;
   margin-right: auto;
   margin-left: auto;

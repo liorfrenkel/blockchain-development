@@ -9,4 +9,4 @@ export { default as Spacer } from './Spacer.jsx';
 export { default as Separator } from './Separator.jsx';
 export { default as Link } from './Link.jsx';
 export { default as Menu } from './Menu.jsx';
-
+export { default as SideSlideMenu } from './SideSlideMenu.jsx';

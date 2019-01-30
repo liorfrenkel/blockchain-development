@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import themeUtils from '../../themes/themeUtils';
+import themeUtils from '../../lib/themeUtils';
 
 const getSizeV = props =>
   props.size
-    ? themeUtils.getTheme(props.theme).spacings.vertical[props.size]
-    : themeUtils.getTheme(props.theme).spacings.vertical[2];
+    ? themeUtils.getTheme(props).spacings.vertical[props.size]
+    : themeUtils.getTheme(props).spacings.vertical[2];
 
 const Separator = styled.div`
   width: 17px;

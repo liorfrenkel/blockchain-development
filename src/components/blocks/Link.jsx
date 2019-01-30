@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
-import themeUtils from '../../themes/themeUtils';
+import styled from '@emotion/styled';
+import themeUtils from '../../lib/themeUtils';
 
-const linkCss = p => css`
+const StyledLink = styled.a`
   text-decoration: none;
-  color: ${themeUtils.getTheme(p.theme).colors.text};
+  color: ${p => themeUtils.getTheme(p).colors.text};
 `;
 
-const Link = props => {
+const Link = ({children, ...props}) => {
   const { target } = props;
   const rel = target === '_blank' ? 'rel="noopener noreferrer"' : '';
 
   return (
-    <a css={linkCss(props)} rel={rel} {...props}>
-      {props.children}
-    </a>
+    <StyledLink rel={rel} {...props}>
+      {children}
+    </StyledLink>
   );
 };
 Link.propTypes = {

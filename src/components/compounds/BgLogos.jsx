@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import themeUtils from '../../themes/themeUtils';
+import themeUtils from '../../lib/themeUtils';
 import logo from '../../images/logo-big.png';
 
 const BgLogo = styled.div`

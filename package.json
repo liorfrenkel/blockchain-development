@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.6",
+    "classnames": "^2.2.6",
     "emotion-normalize": "^10.0.0",
     "emotion-theming": "^10.0.6",
     "facepaint": "^1.2.1",
@@ -20,6 +21,7 @@
     "gatsby-transformer-sharp": "^2.1.10",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
+    "react-burger-menu": "^2.6.2",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "styled-theming": "^2.2.0"
@@ -31,6 +33,7 @@
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "test:lib": "babel-tape-runner src/**/**/*.lib.test.js | tap-bail | tap-spec",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook"
   },
@@ -44,10 +47,14 @@
     "@storybook/addons": "^5.0.0-alpha.10",
     "@storybook/react": "^5.0.0-alpha.10",
     "babel-loader": "^8.0.5",
+    "babel-tape-runner": "^3.0.0",
     "eslint": "^5.12.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.16.0"
+    "prettier": "^1.16.0",
+    "tap-bail": "^1.0.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.2"
   },
   "repository": {
     "type": "git",
