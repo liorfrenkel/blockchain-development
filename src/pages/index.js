@@ -27,16 +27,18 @@ const responsiveContainer = themeUtils.mq({
 const IndexPage = ({ data }) => (
   <React.Fragment>
     <BgLogos />
-    <Layout topPadding={false}>
+    <Layout>
       <Seo title="Home" />
       <Centered
-        fullHeight
         css={css`
           position: absolute;
           left: 0;
           width: 100%;
           z-index: 1;
           ${responsiveContainer}
+          @media (max-height: 400px) {
+            height: auto;
+          }
         `}
       >
         <Row column>
