@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Global, css, jsx } from '@emotion/core';
+import { Global, css } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import emotionNormalize from 'emotion-normalize';
 import themeUtils from '../../lib/themeUtils';
@@ -12,9 +12,9 @@ import { Header } from './';
 
 const { h100 } = styles.generic;
 
-const Layout = ({ children }) => (
+const Layout = ({ children, className }) => (
   <ThemeProvider theme={{ mode: 'light' }}>
-    <div css={h100}>
+    <div css={h100} className={className}>
       <Global
         styles={css`
           ${emotionNormalize}
@@ -61,6 +61,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 export default Layout;

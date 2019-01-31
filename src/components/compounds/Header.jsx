@@ -20,6 +20,7 @@ const responsiveMenuTop = themeUtils.mq({
 
 const Header = () => (
   <div
+    className="Header"
     css={css`
       background: #ffffff;
       position: fixed;
@@ -43,6 +44,7 @@ const Header = () => (
       `}
     />
     <Container
+      className="Header--container"
       css={css`
         ${themeUtils.mq({
           paddingTop: paddingsTop,
@@ -67,9 +69,9 @@ const Header = () => (
         />
       </Link>
     </Container>
-    <Menu right>
+    <Menu right menuPaddingTop={themeUtils.sizeToPx(headerHeights)}>
       <Link to="/" activeClassName="is-active">HOME</Link>
-      <Link to="/team" activeClassName="is-active">TEAM</Link>
+      <Link to="/team/" activeClassName="is-active">TEAM</Link>
     </Menu>
   </div>
 );

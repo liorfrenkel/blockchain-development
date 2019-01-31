@@ -17,6 +17,10 @@ const responsiveHorizontalPadding = props =>
     paddingRight: paddingHorizontal(props),
     paddingLeft: paddingHorizontal(props),
   });
+const responsiveTopPadding = props =>
+  themeUtils.mq({
+    paddingTop: props.menuPaddingTop ? props.menuPaddingTop : '120px',
+  });
 
 const responsiveMenuWidth = themeUtils.mq({
   width: ['250px', '300px', null, '400px'],
@@ -40,13 +44,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .bm-menu-wrap {
     position: fixed;
     height: 100%;
+    top: 0;
     ${responsiveMenuWidth}
   }
 
   /* General sidebar styles */
   .bm-menu {
     background: ${p => getTheme(p).colors.bg1};
-    padding-top: 20px;
+    ${p => responsiveTopPadding(p)}
     padding-bottom: 0;
     ${p => responsiveHorizontalPadding(p)}
     font-size: 1.15em;
@@ -60,6 +65,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   /* Wrapper for item list */
   .bm-item-list {
     padding: 0;
+    padding-top: 20px;
   }
 
   /* Individual item */
@@ -85,6 +91,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 const menuInnerStyles = {
   bmOverlay: {
     background: 'rgba(0, 0, 0, 0.1)',
+    top: 0,
+    left: 0,
   },
   bmItemList: {
     height: 'auto',
@@ -95,7 +103,7 @@ const transitionSpeed = '.1s';
 const transitionEasing = 'ease-in-out';
 
 const MenuToggleWrapper = styled.div`
-  z-index: 1000;
+  z-index: 1200;
   position: fixed;
   top: 36px;
   width: 30px;

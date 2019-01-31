@@ -27,7 +27,14 @@ const responsiveContainer = themeUtils.mq({
 const IndexPage = ({ data }) => (
   <React.Fragment>
     <BgLogos />
-    <Layout>
+    <Layout css={css`
+      .Header {
+        background-color: transparent;
+      }
+      .Header--container {
+        visibility: hidden;
+      }
+    `}>
       <Seo title="Home" />
       <Centered
         css={css`
@@ -35,10 +42,8 @@ const IndexPage = ({ data }) => (
           left: 0;
           width: 100%;
           z-index: 1;
-          ${responsiveContainer}
-          @media (max-height: 400px) {
-            height: auto;
-          }
+          top:0;
+          height: 100%;
         `}
       >
         <Row column>
