@@ -23,13 +23,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'BlockchainDevelopment',
+        short_name: 'blockchain',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#ffffff',
+        theme_color: '#f2f2f2',
         display: 'minimal-ui',
-        icon: 'src/images/logo-big.png',
+        icon: 'src/images/icon-black.jpg',
       },
     },
     'gatsby-plugin-emotion',
