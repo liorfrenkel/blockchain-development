@@ -6,11 +6,11 @@ import { Container, SideSlideMenu as Menu } from '../blocks';
 import themeUtils from '../../lib/themeUtils';
 
 const menuBtn = {
-  width: 16,
-  height: 13,
+  width: 18,
+  height: 18,
 };
-const paddingsTop = ['11px'];
-const headerHeights = ['52'];
+const paddingsTop = ['12px'];
+const headerHeights = [70];
 const responsiveBodyPadding = themeUtils.mq({
   paddingTop: themeUtils.sizeToPx(headerHeights),
 });
@@ -63,7 +63,7 @@ const Header = () => (
         <Logo
           horizontal
           css={themeUtils.mq({
-            height: '30px',
+            height: '46px',
             display: 'block',
           })}
         />
