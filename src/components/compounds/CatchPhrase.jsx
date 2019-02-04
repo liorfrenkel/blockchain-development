@@ -11,6 +11,7 @@ const TextBlock = styled.div`
   ${responsiveMaxWidth}
   text-align: center;
   margin: 0 auto;
+  line-height: 24px;
 `;
 
 const CatchPhrase = () => (
