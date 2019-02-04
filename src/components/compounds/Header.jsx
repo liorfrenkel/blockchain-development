@@ -9,8 +9,8 @@ const menuBtn = {
   width: 30,
   height: 26,
 };
-const paddingsTop = ['15px', '21px'];
-const headerHeights = ['80', '102'];
+const paddingsTop = ['11px'];
+const headerHeights = ['52'];
 const responsiveBodyPadding = themeUtils.mq({
   paddingTop: themeUtils.sizeToPx(headerHeights),
 });
@@ -63,7 +63,7 @@ const Header = () => (
         <Logo
           horizontal
           css={themeUtils.mq({
-            maxHeight: ['50px', '60px'],
+            height: '30px',
             display: 'block',
           })}
         />
