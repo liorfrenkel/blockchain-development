@@ -5,6 +5,11 @@ A website for the Blockchain Development company, built using gatsby js
 - React js
 - Emotion js
 
+## First steps
+1. run `npm run setup`
+2. open the generated .npmrc file in the root folder
+3. insert the font awesome pro code
+
 ## Available scripts
 1. `npm start` - start the development server
 2. `npm run build` - build the project for production
