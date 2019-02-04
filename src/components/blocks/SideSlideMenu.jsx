@@ -1,7 +1,8 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
-import { css } from '@emotion/core';
 import styled from '@emotion/styled';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faBars, faTimes} from '@fortawesome/pro-light-svg-icons';
 import cx from 'classnames';
 import themeUtils from '../../lib/themeUtils';
 
@@ -98,7 +99,6 @@ const menuInnerStyles = {
     height: 'auto',
   },
 };
-const lineThickness = '4px';
 const transitionSpeed = '.1s';
 const transitionEasing = 'ease-in-out';
 
@@ -107,57 +107,20 @@ const MenuToggleWrapper = styled.div`
   position: fixed;
   top: 36px;
   width: 30px;
-  height: 26px;
+  height: 30px;
   ${p => responsiveHorizontal(p)}
-`;
-const MenuToggle = styled.button`
-  display: block;
-  width: 100%;
-  height: 100%;
 
-  background: transparent;
-  border-top: ${lineThickness} solid;
-  border-bottom: ${lineThickness} solid;
-  border-left: none;
-  border-right: none;
-
-  cursor: pointer;
-  outline: none;
-  color: ${p => getTheme(p).colors.menu.active};
-  font-size: 0;
-
-  transition: all ${transitionSpeed} ${transitionEasing};
-
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: ${lineThickness};
-
+  .menu-icon {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(90deg);
+    transition: all ${transitionSpeed} ${transitionEasing};
 
-    background: currentColor;
-
-    transform: translate(-50%, -50%);
-    transition: transform ${transitionSpeed} ${transitionEasing};
-  }
-
-  &:hover {
-    color: ${p => getTheme(p).colors.menu.hover};
-  }
-
-  &.is-active {
-    border-color: transparent;
-
-    &:before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    &:after {
-      transform: translate(-50%, -50%) rotate(-45deg);
+    &.is-active {
+      transform: rotate(0deg);
+      opacity: 1;
     }
   }
 `;
@@ -196,7 +159,6 @@ class SideSlideMenu extends React.Component {
 
   render() {
     const { active } = this.state;
-    const isActive = { 'is-active': active };
     return (
       <SideSlideMenuWrapper className="SideSlideMenu" {...this.props}>
         <MenuToggleWrapper
@@ -204,9 +166,8 @@ class SideSlideMenu extends React.Component {
           {...this.props}
           onClick={this.toggle}
         >
-          <MenuToggle className={cx(isActive)} {...this.props}>
-            Menu
-          </MenuToggle>
+          <FontAwesomeIcon icon={faBars} className={cx('menu-icon', { 'is-active': !active })}  />
+          <FontAwesomeIcon icon={faTimes} className={cx('menu-icon', { 'is-active': active })}  />
         </MenuToggleWrapper>
         <Menu
           width={''}

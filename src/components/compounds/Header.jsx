@@ -6,8 +6,8 @@ import { Container, SideSlideMenu as Menu } from '../blocks';
 import themeUtils from '../../lib/themeUtils';
 
 const menuBtn = {
-  width: 30,
-  height: 26,
+  width: 16,
+  height: 13,
 };
 const paddingsTop = ['11px'];
 const headerHeights = ['52'];
