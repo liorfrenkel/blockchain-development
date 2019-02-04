@@ -24,7 +24,7 @@ const responsiveTopPadding = props =>
   });
 
 const responsiveMenuWidth = themeUtils.mq({
-  width: ['250px', '300px', null, '400px'],
+  width: ['200px'],
 });
 
 const SideSlideMenuWrapper = styled.div`
