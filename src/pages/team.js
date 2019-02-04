@@ -69,7 +69,7 @@ const IndexPage = ({ data }) => (
           <Title
             css={theme => ({
               textAlign: 'center',
-              marginBottom: getTheme({ theme }).spacings.vertical[2],
+              marginBottom: getTheme({ theme }).spacings.vertical[1],
             })}
           >
             MEET OUR TEAM

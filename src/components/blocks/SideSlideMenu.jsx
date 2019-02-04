@@ -75,6 +75,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
     outline: none;
     font-family: 'industry';
     font-weight: 700;
+    font-size: 1rem;
     text-decoration: none;
     text-align: ${p => (p.right ? 'right' : 'left')};
     margin-bottom: ${p => getTheme(p).spacings.horizontal[1]};

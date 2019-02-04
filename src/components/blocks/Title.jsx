@@ -2,22 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import themeUtils from '../../lib/themeUtils';
 
-const titleBaseStyle = css`
+const titleBaseStyle = p => css`
   font-family: industry;
+  letter-spacing: 3px;
   margin-top: 0;
+  color: ${themeUtils.getTheme(p).colors.title};
 `;
 
 const Title1 = styled.h1`
-  ${titleBaseStyle}
-  font-size: 2rem;
+  ${p => titleBaseStyle(p)}
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 `;
 
 const Title2 = styled.h2`
-  ${titleBaseStyle}
-  font-size: 1.5rem;
+  ${p => titleBaseStyle(p)}
+  font-size: 1.375rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 `;

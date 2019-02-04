@@ -21,8 +21,8 @@ const themes = {
       title: '#000000',
       menu: {
         normal: '#808080',
-        active: '#0b0c0d',
-        hover: '#0b0c0d',
+        active: '#000000',
+        hover: '#000000',
       }
     },
     spacings: {
