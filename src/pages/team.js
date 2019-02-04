@@ -168,7 +168,7 @@ export default IndexPage;
 export const imageShape = graphql`
   fragment imageShape on File {
     childImageSharp {
-      fluid(maxWidth: 326) {
+      fluid(maxWidth: 326, quality: 80) {
         ...GatsbyImageSharpFluid
       }
     }
