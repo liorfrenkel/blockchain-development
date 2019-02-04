@@ -44,8 +44,9 @@ const TeamMember = ({ name, email, imageSrc, className }) => (
 const StyledTeamMember = styled(TeamMember)`
   .image {
     ${themeUtils.mq({
-      width: ['260px', null, '326px'],
-      height: ['317px', null, '397px'],
+      width: ['260px', null, null, null, 'calc(((100vw - 140px) / 4) - 50px)'],
+      height: 'auto',
+      maxWidth: '326px',
     })}
     background-color: #000000;
   }
@@ -121,6 +122,7 @@ const IndexPage = ({ data }) => (
               <StyledTeamMember
                 name="Lior Frenkel"
                 email="lior@zenprotocol.com"
+                imageSrc={data.default.childImageSharp.fluid}
               />
             </Col>
             <Col>
@@ -134,12 +136,14 @@ const IndexPage = ({ data }) => (
               <StyledTeamMember
                 name="Ariel Grunfeld"
                 email="ariel@zenprotocol.com"
+                imageSrc={data.default.childImageSharp.fluid}
               />
             </Col>
             <Col>
               <StyledTeamMember
                 name="Nir Holtzman Ninio"
                 email="nir@zenprotocol.com"
+                imageSrc={data.default.childImageSharp.fluid}
               />
             </Col>
             <Col>
@@ -164,7 +168,7 @@ export default IndexPage;
 export const imageShape = graphql`
   fragment imageShape on File {
     childImageSharp {
-      fluid(maxWidth: 326, maxHeight: 397) {
+      fluid(maxWidth: 326) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -173,6 +177,10 @@ export const imageShape = graphql`
 
 export const query = graphql`
   query {
+    default: file(relativePath: { regex: "/team/default/" }) {
+      ...imageShape
+    }
+
     adam: file(relativePath: { regex: "/team/adam/" }) {
       ...imageShape
     }
