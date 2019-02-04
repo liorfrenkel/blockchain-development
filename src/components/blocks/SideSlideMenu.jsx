@@ -109,6 +109,7 @@ const MenuToggleWrapper = styled.div`
   top: 36px;
   width: 30px;
   height: 30px;
+  cursor: pointer;
   ${p => responsiveHorizontal(p)}
 
   .menu-icon {
