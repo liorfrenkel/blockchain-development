@@ -11,8 +11,8 @@ import {
   Col,
   Separator,
   Spacer,
-  Link,
   Title,
+  EmailLink,
 } from '../components/blocks';
 const {getTheme} = themeUtils;
 
@@ -37,7 +37,7 @@ const TeamMember = ({ name, email, imageSrc, className }) => (
     </div>
     <div className="details">
       <Title className="name" size="2">{name}</Title>
-      <Link href={`mailto:${email}`}>{email}</Link>
+      <EmailLink href={`mailto:${email}`}>{email}</EmailLink>
     </div>
   </div>
 );

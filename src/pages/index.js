@@ -14,27 +14,22 @@ import {
   Col,
   Spacer,
   Separator,
-  Link,
+  EmailLink,
 } from '../components/blocks';
-import themeUtils from '../lib/themeUtils';
-
-const headerHeights = ['80px', '102px']; // defined by the logo height and padding in header
-const responsiveContainer = themeUtils.mq({
-  top: headerHeights,
-  height: headerHeights.map(h => `calc(100% - ${h})`),
-});
 
 const IndexPage = ({ data }) => (
   <React.Fragment>
     <BgLogos />
-    <Layout css={css`
-      .Header {
-        background-color: transparent;
-      }
-      .Header--container {
-        visibility: hidden;
-      }
-    `}>
+    <Layout
+      css={css`
+        .Header {
+          background-color: transparent;
+        }
+        .Header--container {
+          visibility: hidden;
+        }
+      `}
+    >
       <Seo title="Home" />
       <Centered
         css={css`
@@ -42,7 +37,7 @@ const IndexPage = ({ data }) => (
           left: 0;
           width: 100%;
           z-index: 1;
-          top:0;
+          top: 0;
           height: 100%;
         `}
       >
@@ -58,9 +53,9 @@ const IndexPage = ({ data }) => (
             <Separator />
           </Col>
           <Col>
-            <Link href={`mailto:${data.site.siteMetadata.email}`}>
+            <EmailLink href={`mailto:${data.site.siteMetadata.email}`}>
               {data.site.siteMetadata.email}
-            </Link>
+            </EmailLink>
           </Col>
         </Row>
       </Centered>
